@@ -1,28 +1,14 @@
 'use strict';
 
-function decodeSpell(spell: string) {
-  const dictionary = {
-    '☽': 1,
-    '☾': 5,
-    '♁': 10,
-    '⚕': 50,
-    '⚡': 100,
-  }
+function getCompromisedFiles(lastSafeDownload: number, droneLogs: Array<[number, number]>) {
+  const compromisedFiles: Set<number> = new Set();
 
-  const reversedSpell = spell.split('').reverse().join('');
-
-  let spellValue = 0;
-
-  for (let i = 0; i < reversedSpell.length; i++) {
-    const current = dictionary[reversedSpell[i]];
-    const previous = dictionary[reversedSpell[i - 1]];
-
-    if (previous && previous > current) {
-      spellValue -= current;
-    } else {
-      spellValue += current;
+  droneLogs.forEach((log) => {
+    if (lastSafeDownload < log[1]) {
+      compromisedFiles.add(log[0]);
     }
-  }
+  })
 
-  return spellValue;
+  return Array.from(compromisedFiles)
+    .sort((a, b) => a - b);
 }
