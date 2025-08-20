@@ -24,7 +24,7 @@ function countMelodySequences(notas: number[]) {
       }
 
       let esValido = true;
-      for (let k = 0; k < secuenciaValida; k++) {
+      for (let k = 0; k < secuenciaValida.length; k++) {
         if(secuenciaValida[k] !== notasSeleccionadas[k]) {
           esValido = false;
           break;

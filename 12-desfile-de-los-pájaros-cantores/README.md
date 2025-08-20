@@ -11,10 +11,11 @@ Tu tarea es implementar una función que cuente cuántas subsecuencias consecuti
 
 ```javascript
 const birdNotes = [1, 3, 2, 5, 4]
-countMelodySequences(birdNotes) // → 6
+countMelodySequences(birdNotes) // → 5
 
 // Las secuencias válidas son:
 
+// [1, 3] → no es válida, falta el 2
 // [1, 3, 2] → contiene 1, 2, 3 ✅
 // [1, 3, 2, 5] → no es válida, falta el 4
 // [1, 3, 2, 5, 4] → contiene todos del 1 al 5 ✅
