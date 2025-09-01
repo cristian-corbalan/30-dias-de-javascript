@@ -11,9 +11,3 @@ function secuenciaDeNumeros(tinta: number, codigos: number) {
 
   return codigosDefectuosos;
 }
-
-console.log(secuenciaDeNumeros(1, 15))
-// [1, 10, 11, 12, 13, 14, 15]
-
-console.log(secuenciaDeNumeros(2, 20))
-// [2, 12, 20]

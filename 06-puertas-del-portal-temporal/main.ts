@@ -15,12 +15,3 @@ function portalFueraDeFase(portales: string) {
 
   return -1
 }
-
-console.log(portalFueraDeFase('xyxyxy'));
-// todas se repiten -> -1
-
-console.log(portalFueraDeFase('quasar'));
-// q en el índice 0 ✅
-
-console.log(portalFueraDeFase('aabbccddeeffg'));
-// g en el índice 12 ✅
